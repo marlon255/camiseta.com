@@ -1,6 +1,7 @@
 body{
 	margin: 0px;
 	overflow-x: hidden;
+	height: 100%;
 }
 div.topo{
 	width: 100%;
@@ -89,15 +90,16 @@ div.content{
 	border: 3px solid rgba(255,102,0,.5);
 	border-radius: 2px;
 	width: 100%;
+	height: 100%;
 	float: left;
 	z-index: 0;
 	background-color: rgba(0,0,0,.78);
 	color: #fff;
+	overflow: auto;
 }
 div.conteudo{
 	border: 0px solid black;
 	width: 80%;
-	height: 544px;
 	margin: 10px auto;
 	text-align: center;
 }

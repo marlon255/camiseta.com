@@ -1,10 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" id="tela">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sistema para controle de estoque</title>
 <link rel="stylesheet" type="text/css" href="css/estilo.css">
-<script type="text/javascript"></script>
+<script type="text/javascript">
+  var screenHeight = screen.height;
+  document.getElementById('tela').style.height = screenHeight-205+'px';
+</script>
 </head>
 <body>
 	<div class="topo">
@@ -43,7 +46,7 @@
 			<span>Estoque</span>
 		</div>
 	</div>
-	<div class="content">
+	<div class="content" id="content">
 		<div class="conteudo">
 			Bem vindo ao Sistema de controle de estoque da empresa Camiseta.com!<br>
 			Aqui você poderá realizar todo o controle de estoque e caixa.<br>
