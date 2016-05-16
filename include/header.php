@@ -20,6 +20,7 @@ include($base.$arquivo);
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Sistema para controle de estoque</title>
+<link rel="shortcut icon" href="<?=URL;?>/img/icone.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="<?=URL;?>/css/estilo.css">
 <script type="text/javascript">
   var screenHeight = screen.height;
