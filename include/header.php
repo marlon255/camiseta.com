@@ -31,6 +31,10 @@ include($base.$arquivo);
 		$(".modal").hide(500);
 		$(".fundo").hide();
 	});
+	$(".fundo").click(function(){
+  		$(".modal").hide(500);
+		$(".fundo").hide();
+  });
   $("#pesquisa").click(function(){
   		$(".modal").show(500);
 		$(".fundo").show();

@@ -362,7 +362,7 @@ div.overflow{
 }
 div.header_modal{
 	border: 1px solid;
-	width: 180.5%;
+	width: 190.5%;
 	height: 22px;
 	margin: 2px auto 0px auto;
 	border: 0px solid #FFF;
@@ -374,12 +374,33 @@ div.header_modal div{
 	width: 150px;
 	float: left;
 }
+div.contexto{
+	border: 1px solid;
+	width: 190.5%;
+	height: 580px;
+	float: left;
+}
 div.fundo{
-	background-color: rgba(0,0,0,.7);
+	background-color: rgba(0,0,0,.8);
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
 	height: 100%;
 	display: none;
+}
+input.edit_model{
+	margin-right: 7px;
+	width: 142px;
+	height: 17px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+}
+input.edit_model:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
 }

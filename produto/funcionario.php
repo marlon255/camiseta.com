@@ -81,9 +81,27 @@
 		<div>Data de Admissão</div>
 		<div>Data de Demissão</div>
 		<div>Sálario</div>
+		<div>Ativo</div>
 		<div>Ações</div>
 	</div>
-	<div>
+	<div class="contexto">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
+	<input class="edit_model">
 	</div>
 	</div>
 </div>
