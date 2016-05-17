@@ -61,7 +61,7 @@
 		<input type="submit" class="button" value="Cadastrar">
 	</div>
 </form>
-<input type="submit" class="button" id="pesquisa" value="Pesquisar">
+<input type="submit" class="button" id="pesquisa" value="Localizar">
 <div class="modal" id="modal">
 	<div class="head_modal">
 		<div class="name_modal">Localizar Funcionário</div>
