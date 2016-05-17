@@ -84,25 +84,29 @@
 		<div>Ativo</div>
 		<div>Ações</div>
 	</div>
-	<div class="contexto">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
-	<input class="edit_model">
+	<form class="contexto" method="post">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<input type="text" class="edit_model">
+	<div>
+	<span>Sim</span><input type="radio" name="ativo" id="sim" class="bt_modal" value="sim" checked>
+	<span>Não</span><input type="radio" name="ativo" id="nao" class="bt_modal" value="nao">
 	</div>
+	<div>
+	<input type="submit" class="bt_edit" value="">
+	<input type="submit" class="bt_edit" value="">
+	<input type="submit" class="bt_edit" value="">
+	</div>
+	</form>
 	</div>
 </div>
 <div class="fundo"></div>

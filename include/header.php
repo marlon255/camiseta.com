@@ -39,6 +39,12 @@ include($base.$arquivo);
   		$(".modal").show(500);
 		$(".fundo").show();
   });
+  if($("#sim").checked == true){
+		$("#nao").checked == false;
+  }
+  if($("#nao").checked == true){
+		$("#sim").checked == false;
+  }
 });
 </script>
 </head>
