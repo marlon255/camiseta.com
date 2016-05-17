@@ -22,9 +22,20 @@ include($base.$arquivo);
 <title>Sistema para controle de estoque</title>
 <link rel="shortcut icon" href="<?=URL;?>/img/icone.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="<?=URL;?>/css/estilo.css">
+<script type="text/javascript" src="<?=URL;?>/js/jquery.min.js"></script>
 <script type="text/javascript">
   var screenHeight = screen.height;
   document.getElementById('tela').style.height = screenHeight-198+'px';
+  $(document).ready(function(){
+  $(".exit_modal").click(function(){
+		$(".modal").hide(500);
+		$(".fundo").hide();
+	});
+  $("#pesquisa").click(function(){
+  		$(".modal").show(500);
+		$(".fundo").show();
+  });
+});
 </script>
 </head>
 <?php

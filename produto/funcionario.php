@@ -54,16 +54,40 @@
 		<input type="date" class="text" required>
 	</div>
 	<div class="lcadastro">
-		<label>Salario</label>
+		<label>Sálario</label>
 		<input type="text" class="text" required>
 	</div>
 	<div>
 		<input type="submit" class="button" value="Cadastrar">
-		<input type="submit" class="button" value="Pesquisar" onclick="window.open('funcionario_pesquisa.php', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');">
 	</div>
 </form>
-<div>
+<input type="submit" class="button" id="pesquisa" value="Pesquisar">
+<div class="modal" id="modal">
+	<div class="head_modal">
+		<div class="name_modal">Localizar Funcionário</div>
+		<div class="exit_modal">X</div>
+	</div>
+	<div class="overflow">
+	<div class="header_modal">
+		<div>Nome Completo</div>
+		<div>Função</div>
+		<div>Nível</div>
+		<div>Telefone</div>
+		<div>Endereço</div>
+		<div>Bairro</div>
+		<div>Data de Nasc.</div>
+		<div>CPF</div>
+		<div>RG</div>
+		<div>Data de Admissão</div>
+		<div>Data de Demissão</div>
+		<div>Sálario</div>
+		<div>Ações</div>
+	</div>
+	<div>
+	</div>
+	</div>
 </div>
+<div class="fundo"></div>
 <?php
 	include '../include/rodape.php';
 ?>
