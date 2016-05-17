@@ -249,12 +249,14 @@ div.header div{
 }
 div.material{
 	width: 695px;
+	height: 370px;
 	margin: 2px auto 0px auto;
 	border: 0px solid #FFF;
 	float: left;
+	overflow: auto;
 }
 div.material div{
-    width: 130px;
+    width: 96px;
     float: left;
 }
 input.edit{
@@ -357,7 +359,7 @@ div.exit_modal{
 	color: rgba(255,102,0,1);
 }
 div.overflow{
-	overflow-x: scroll;
+	overflow: auto;
 	height: 600px;
 }
 div.header_modal{
@@ -375,13 +377,12 @@ div.header_modal div{
 	float: left;
 }
 div.contexto{
-	border: 1px solid;
+	border: 0px solid;
 	width: 190.5%;
-	height: 580px;
 	float: left;
 }
 div.fundo{
-	background-color: rgba(0,0,0,.8);
+	background-color: rgba(0,0,0,.7);
 	position: absolute;
 	top: 0px;
 	left: 0px;

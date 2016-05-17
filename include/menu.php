@@ -3,7 +3,7 @@
 			<a href="<?=URL;?>index.php"><span>&lang;&lang; Inicio</span></a>
 		</div>
 		<div class="drop">
-			<span>&lang;&lang; Produto</span>
+			<span>&lang;&lang; Cadastro</span>
 			<ul class="dropdown">
 				<a href="<?=URL;?>produto/material.php"><li>Material</li></a>
 				<a href="<?=URL;?>produto/funcionario.php"><li>Funcionário</li></a>
