@@ -13,9 +13,9 @@
 		<div class="drop">
 			<span>&lang;&lang; Caixa</span>
 			<ul class="dropdown">
-				<li>Entrada</li>
-				<li>Saída</li>
-				<li>Relatório</li>
+				<a href="<?=URL;?>caixa/entrada.php"><li>Entrada</li></a>
+				<a href="<?=URL;?>caixa/saida.php"><li>Saída</li></a>
+				<a href="<?=URL;?>caixa/relatorio.php"><li>Relatório</li></a>
 			</ul>
 		</div>
 		<div>

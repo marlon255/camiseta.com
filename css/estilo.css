@@ -417,13 +417,45 @@ form.contexto span{
 input.bt_modal{
 	-webkit-appearance: none;
     background-color: rgba(0,0,0,0);
-	border: 2px solid rgba(255,102,0,1);
+	border: 1px solid #FFF;
     border-radius: 10px;
     width: 15px;
     height: 15px;
 	float: left;
+	outline: none;
 }
 input.bt_modal:checked{
-	background-color: #FFF;
-	border: 2px solid rgba(255,102,0,1);
+	background-image: url(../img/checked.jpeg);
+	background-size: 13px 13px;
+	background-repeat: no-repeat;
+	border: 1px solid rgba(255,102,0,1);
+	transition: background 1s;
+}
+/* ESTILO DESPESA */
+div.despesa{
+	width: 695px;
+	height: 370px;
+	margin: 2px auto 0px auto;
+	border: 0px solid #FFF;
+	float: left;
+	overflow: auto;
+}
+div.despesa div{
+    width: 96px;
+    float: left;
+}
+div.despesa select{
+	margin-right: 7px;
+	width: 132px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+}
+div.despesa select:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
 }

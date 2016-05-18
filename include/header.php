@@ -24,7 +24,14 @@ include($base.$arquivo);
 <link rel="stylesheet" type="text/css" href="<?=URL;?>/css/estilo.css">
 <script type="text/javascript" src="<?=URL;?>/js/jquery.min.js"></script>
 <script type="text/javascript">
-  var screenHeight = screen.height;
+	var screenHeight = screen.height;
+	var now = new Date();
+	var day = now.getDate();
+	var month = now.getMonth() + 1;
+	var year = now.getFullYear();
+	if (month < 10) month = "0" + month;
+	if (day < 10) day = "0" + day;
+	var today = year + "-" + month + "-" + day;
   document.getElementById('tela').style.height = screenHeight-198+'px';
   $(document).ready(function(){
   $(".exit_modal").click(function(){
@@ -45,6 +52,7 @@ include($base.$arquivo);
   if($("#nao").checked == true){
 		$("#sim").checked == false;
   }
+  $("#date").val(today);
 });
 </script>
 </head>
