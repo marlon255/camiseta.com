@@ -12,8 +12,17 @@ var hoje = (dia + "/" + mes + "/" + ano);
 <h1>Entrada em Caixa</h1>
 <form class="cadastro">
 	<div class="lcadastro">
+		<label>Recibo</label>
+		<input type="text" class="text" required>
+	</div>
+	<div class="lcadastro">
 		<label>Data</label>
 		<input id="date" type="date" class="text" value="" required>
+		<input type="time" step="1" id="hour">
+	</div>
+	<div class="lcadastro">
+		<label>Cliente</label>
+		<input type="text" class="text" required>
 	</div>
 	<div class="lcadastro">
 		<label>Item a ser Vendido</label>

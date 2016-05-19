@@ -32,6 +32,22 @@ include($base.$arquivo);
 	if (month < 10) month = "0" + month;
 	if (day < 10) day = "0" + day;
 	var today = year + "-" + month + "-" + day;
+	
+    function checkTime(i) {
+        return (i < 10) ? "0" + i : i;
+    }
+
+    function startTime() {
+		var hoje = new Date();
+            h = checkTime(hoje.getHours()),
+            m = checkTime(hoje.getMinutes()),
+            s = checkTime(hoje.getSeconds());
+			hour = h + ":" + m + ":" + s;
+        t = setTimeout(function () {
+            startTime()
+        }, 1000);
+    }
+    startTime();
   document.getElementById('tela').style.height = screenHeight-198+'px';
   $(document).ready(function(){
   $(".exit_modal").click(function(){
@@ -53,6 +69,11 @@ include($base.$arquivo);
 		$("#sim").checked == false;
   }
   $("#date").val(today);
+  $("#hour").hide();
+  $("#hour").val(hour);
+  $(".button").click(function(){
+  $("#hour").val(hour);
+  });
 });
 </script>
 </head>
