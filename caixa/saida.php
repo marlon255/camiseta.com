@@ -2,7 +2,7 @@
 	include '../include/header.php';
 	include '../include/menu.php';
 ?>
-<h1>Entrada em Caixa</h1>
+<h1>Saída em Caixa</h1>
 <form class="cadastro">
 	<div class="lcadastro">
 		<label>Recibo</label>
@@ -14,11 +14,11 @@
 		<input type="time" step="1" id="hour">
 	</div>
 	<div class="lcadastro">
-		<label>Cliente</label>
+		<label>Fornecedor</label>
 		<input type="text" class="text" required>
 	</div>
 	<div class="lcadastro">
-		<label>Item a ser Vendido</label>
+		<label>Item a ser Comprado</label>
 		<select required>
 			<option selected disabled>Selecione-->></option>
 			<option>PHP</option>
@@ -49,7 +49,7 @@
 		<div>Recibo</div>
 		<div>Data</div>
 		<div>Hora</div>
-		<div>Cliente</div>
+		<div>Fornecedor</div>
 		<div>Item</div>
 		<div>Quantidade</div>
 		<div>Valor Unitario</div>

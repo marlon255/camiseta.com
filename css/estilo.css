@@ -234,6 +234,7 @@ div.exibir{
 	border: 2px solid rgba(255,102,0,1);
 	border-radius: 8px;
 	margin: 25px auto 0px auto;
+	overflow: auto;
 }
 div.header{
 	width: 695px;
@@ -456,6 +457,44 @@ div.despesa select{
 	transition: border .5s;
 }
 div.despesa select:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}
+/* ESTILO ENTRADA DE CAIXA */
+div.titulo{
+	border: 0px solid;
+	width: 1510px;
+	float: left;
+}
+div.titulo div{
+	border-right: 1px dotted #CCC;
+	border-bottom: 1px dotted #CCC;
+	width: 150px;
+	float: left;
+}
+div.entrada{
+	width: 1510px;
+	margin: 2px auto 0px auto;
+	border: 0px solid #FFF;
+	float: left;
+	overflow: auto;
+}
+div.entrada div{
+    width: 96px;
+    float: left;
+}
+div.entrada select{
+	margin-right: 7px;
+	width: 145px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+}
+div.entrada select:hover{
 	border: 1px solid rgba(255,102,0,1);
 	transition: border .5s;
 }

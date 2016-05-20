@@ -1,8 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <?php
+// CHAMANDO URL DE CSS APARTIR DA BASE
 	define('URL', 'http://'.$_SERVER['SERVER_NAME'].'/camiseta.com/');
-?>
-<?php
 // FUNÇÃO PARA INCLUIR O ARQUIVO LOCAL
 function incluir($arquivo) {
  
@@ -23,58 +22,9 @@ include($base.$arquivo);
 <link rel="shortcut icon" href="<?=URL;?>/img/icone.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="<?=URL;?>/css/estilo.css">
 <script type="text/javascript" src="<?=URL;?>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?=URL;?>/js/funcoes.js"></script>
 <script type="text/javascript">
-	var screenHeight = screen.height;
-	var now = new Date();
-	var day = now.getDate();
-	var month = now.getMonth() + 1;
-	var year = now.getFullYear();
-	if (month < 10) month = "0" + month;
-	if (day < 10) day = "0" + day;
-	var today = year + "-" + month + "-" + day;
-	
-    function checkTime(i) {
-        return (i < 10) ? "0" + i : i;
-    }
 
-    function startTime() {
-		var hoje = new Date();
-            h = checkTime(hoje.getHours()),
-            m = checkTime(hoje.getMinutes()),
-            s = checkTime(hoje.getSeconds());
-			hour = h + ":" + m + ":" + s;
-        t = setTimeout(function () {
-            startTime()
-        }, 1000);
-    }
-    startTime();
-  document.getElementById('tela').style.height = screenHeight-198+'px';
-  $(document).ready(function(){
-  $(".exit_modal").click(function(){
-		$(".modal").hide(500);
-		$(".fundo").hide();
-	});
-	$(".fundo").click(function(){
-  		$(".modal").hide(500);
-		$(".fundo").hide();
-  });
-  $("#pesquisa").click(function(){
-  		$(".modal").show(500);
-		$(".fundo").show();
-  });
-  if($("#sim").checked == true){
-		$("#nao").checked == false;
-  }
-  if($("#nao").checked == true){
-		$("#sim").checked == false;
-  }
-  $("#date").val(today);
-  $("#hour").hide();
-  $("#hour").val(hour);
-  $(".button").click(function(){
-  $("#hour").val(hour);
-  });
-});
 </script>
 </head>
 <?php
