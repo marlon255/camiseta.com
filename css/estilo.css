@@ -498,3 +498,24 @@ div.entrada select:hover{
 	border: 1px solid rgba(255,102,0,1);
 	transition: border .5s;
 }
+/* ESTILO PARA INPUT DINHEIRO */
+input.money{
+	margin-top: 10px;
+	width: 146px;
+	height: 17px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+	outline: none;
+}
+input.money:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}
+input.money:focus{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}

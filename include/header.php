@@ -22,6 +22,7 @@ include($base.$arquivo);
 <link rel="shortcut icon" href="<?=URL;?>/img/icone.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="<?=URL;?>/css/estilo.css">
 <script type="text/javascript" src="<?=URL;?>/js/jquery.min.js"></script>
+<script type="text/javascript" src="<?=URL;?>/js/jquery.maskMoney.js"></script>
 <script type="text/javascript" src="<?=URL;?>/js/funcoes.js"></script>
 <script type="text/javascript">
 

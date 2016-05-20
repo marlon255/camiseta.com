@@ -30,15 +30,16 @@
 	</div>
 	<div class="lcadastro">
 		<label>Valor Unitario</label>
-		<input type="text" class="text" id="val" value="R$" required>
+		<input type="text" class="money" id="val" value="R$0,00" required>
 	</div>
 	<div class="lcadastro">
 		<label>Desconto</label>
-		<input type="text" class="text" id="desc" value="R$" onblur="calcular()" required>
+		<input type="text" class="money" id="desc" value="R$0,00" onblur="calcular()" required>
 	</div>
 	<div class="lcadastro">
 		<label>Total</label>
-		<input type="text" class="text" id="tot" value="R$" required>
+		<input type="text" class="text" id="tot" required readonly>
+		<input type="hidden" class="text" id="total" required readonly>
 	</div>
 	<div>
 		<input type="submit" class="button" value="Vender">

@@ -11,7 +11,10 @@
   }else{
     var tot = (quant * valor);
   }
-  document.getElementById('tot').value = "R$"+tot;
+  var sub = document.getElementById('tot').value = "R$"+tot.toFixed(2);
+  var total = sub.replace(".",",");
+  document.getElementById('tot').value = total;
+  document.getElementById('total').value = tot;
   }
 //Usando o tamanho da tela para determinar o tamanho do HTML
   var screenHeight = screen.height;
@@ -61,4 +64,6 @@
   $(".button").click(function(){
   $("#hour").val(hour);
   });
+	//MASCARA MOEDA
+	$(".money").maskMoney({showSymbol:true, symbol:"R$", decimal:",", thousands:"."});
 });
