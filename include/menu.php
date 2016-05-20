@@ -18,8 +18,13 @@
 				<a href="<?=URL;?>caixa/relatorio.php"><li>Relatório</li></a>
 			</ul>
 		</div>
-		<div>
+		<div class="drop">
 			<span>&lang;&lang; Estoque</span>
+			<ul class="dropdown">
+				<a href="<?=URL;?>estoque/entrada.php"><li>Entrada</li></a>
+				<a href="<?=URL;?>estoque/saida.php"><li>Saída</li></a>
+				<a href="<?=URL;?>estoque/estoque.php"><li>Estoque</li></a>
+			</ul>
 		</div>
 		<div>
 			<span>&lang;&lang; Suporte</span>

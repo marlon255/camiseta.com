@@ -38,7 +38,7 @@
 	</div>
 	<div class="lcadastro">
 		<label>Total</label>
-		<input type="text" class="text" id="tot" required readonly>
+		<input type="text" class="money" id="tot" required readonly>
 		<input type="hidden" class="text" id="total" required readonly>
 	</div>
 	<div>

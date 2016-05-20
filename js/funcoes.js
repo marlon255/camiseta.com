@@ -40,7 +40,7 @@
 			hour = h + ":" + m + ":" + s;
         t = setTimeout(function () {
             startTime()
-        }, 1000);
+        }, 500);
     }
     startTime();
 //Configuração do modal
@@ -56,6 +56,21 @@
   $("#pesquisa").click(function(){
   		$(".modal").show(500);
 		$(".fundo").show();
+  });
+  $("#bt_enter").click(function(){
+	  $("#saida").hide(500);
+	  $("#todos").hide(500);
+	  $("#entrada").show(500);
+  });
+  $("#bt_exit").click(function(){
+	  $("#entrada").hide(500);
+	  $("#todos").hide(500);
+	  $("#saida").show(500);
+  });
+  $("#bt_all").click(function(){
+	  $("#entrada").hide(500);
+	  $("#saida").hide(500);
+	  $("#todos").show(500);
   });
 //Colocando hora nos input e atualizando ao clickar para mandar as informações para o banco de dados
   $("#date").val(today);
