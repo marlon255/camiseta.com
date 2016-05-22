@@ -71,9 +71,11 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 	</div>
 <?php
 	do{
+		include 'func_mat.php';
 ?>
 	<div class="material">
 	<form method="post">
+		<input type="hidden" name="material_id" value="<?=$rows_material['id'];?>">
 		<input id="material_new<?=$rows_material['id'];?>" name="material_new<?=$rows_material['id'];?>" type="text" class="edit" value="<?=$rows_material['material'];?>" disabled>
 		<input id="tipo_new<?=$rows_material['id'];?>" name="tipo_new<?=$rows_material['id'];?>" type="text" class="edit" value="<?=$rows_material['tipo'];?>" disabled>
 		<select id="grupo_new<?=$rows_material['id'];?>" name="grupo_new<?=$rows_material['id'];?>" disabled>
@@ -87,7 +89,7 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 			<option>Indireto</option>
 		</select>
 		<div>
-		<input id="editar<?=$rows_material['id'];?>" name="editar<?=$rows_material['id'];?>" type="submit" id="editar" class="editar" value="" title="Editar" required>
+		<input id="editar<?=$rows_material['id'];?>" name="editar<?=$rows_material['id'];?>" type="button" id="editar" class="editar" value="" title="Editar" required>
 		<input id="salvar<?=$rows_material['id'];?>" name="salvar<?=$rows_material['id'];?>" type="submit" id="salvar" class="salvar" value="" title="Salvar" required>
 		<input id="excluir<?=$rows_material['id'];?>" name="excluir<?=$rows_material['id'];?>" type="submit" id="excluir" class="excluir" value="" title="Deletar" required>
 	</form>
