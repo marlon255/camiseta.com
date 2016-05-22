@@ -5,9 +5,9 @@
 		<div class="drop">
 			<span>&lang;&lang; Cadastro</span>
 			<ul class="dropdown">
-				<a href="<?=URL;?>produto/material.php"><li>Material</li></a>
-				<a href="<?=URL;?>produto/funcionario.php"><li>Funcionário</li></a>
-				<a href="<?=URL;?>produto/despesas.php"><li>Despesas</li></a>
+				<a href="<?=URL;?>cadastro/material.php"><li>Material</li></a>
+				<a href="<?=URL;?>cadastro/funcionario.php"><li>Funcionário</li></a>
+				<a href="<?=URL;?>cadastro/despesas.php"><li>Despesas</li></a>
 			</ul>
 		</div>
 		<div class="drop">
@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 		<div>
-			<span>&lang;&lang; Suporte</span>
+			<a href="<?=URL;?>suporte.php"><span>&lang;&lang; Suporte</span></a>
 		</div>
 	</div>
 	<div class="content" id="content">

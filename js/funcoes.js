@@ -15,6 +15,27 @@
   var total = sub.replace(".",",");
   document.getElementById('tot').value = total;
   document.getElementById('total').value = tot;
+  var estoque = document.getElementById('estoque');
+  var entrada_estoque = document.getElementById('entrada_estoque');
+  var soma_estoque = estoque + entrada_estoque;
+  }
+
+  function enter_estoque(){
+  var estoque = document.getElementById('estoque').value;
+  var entrada_estoque = document.getElementById('entrada_estoque').value;
+  if(estoque > "0"){
+  var soma_estoque = parseInt(estoque) + parseInt(entrada_estoque);
+  document.getElementById('novo_estoque').value = soma_estoque;
+  }
+  }
+
+  function exit_estoque(){
+  var estoque = document.getElementById('estoque').value;
+  var saida_estoque = document.getElementById('saida_estoque').value;
+  if(estoque > 0){
+  var subtracao_estoque = parseInt(estoque) - parseInt(saida_estoque);
+  document.getElementById('new_estoque').value = subtracao_estoque;
+  }
   }
 //Usando o tamanho da tela para determinar o tamanho do HTML
   var screenHeight = screen.height;

@@ -7,6 +7,7 @@ body{
 }
 a{
 	text-decoration: none;
+	color: #FFF;
 }
 /* ESTILO HEADER */
 div.topo{
@@ -250,7 +251,6 @@ div.header div{
 }
 div.material{
 	width: 695px;
-	height: 370px;
 	margin: 2px auto 0px auto;
 	border: 0px solid #FFF;
 	float: left;
@@ -306,24 +306,66 @@ input.bt_edit:hover{
 	border: 1px solid rgba(255,102,0,1);
 	transition: border .5s;
 }
-input#editar{
+input.editar{
 	background-image: url(../img/editar.png);
 	background-size: 19px 19px;
 	background-repeat: no-repeat;
 	outline: none;
 	margin-left: 25%;
+	margin-right: 3px;
+	width: 21px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+	cursor: pointer;
 }
-input#salvar{
+input.editar:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}
+input.salvar{
 	background-image: url(../img/salvar.png);
 	background-size: 19px 19px;
 	background-repeat: no-repeat;
 	outline: none;
+	margin-right: 3px;
+	width: 21px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+	cursor: pointer;
 }
-input#excluir{
+input.salvar:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}
+input.excluir{
 	background-image: url(../img/delete.png);
 	background-size: 19px 19px;
 	background-repeat: no-repeat;
 	outline: none;
+	margin-right: 3px;
+	width: 21px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+	cursor: pointer;
+}
+input.excluir:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
 }
 /* ESTILO FUNCIONARIO */
 div.modal{
@@ -575,14 +617,53 @@ div.edit_enter select:hover{
 div#todos{
 	display: block;
 }
-
-
-
-
-
-
-
-
+/* ESTILO ESTOQUE */
+table.estoque{
+	border: 0px solid;
+	width: 400px;
+	margin: 15px auto;
+}
+table.estoque td{
+	border-right: 1px dotted #FFF;
+	border-bottom: 1px dotted #FFF;
+}
+/* ESTILO SUPORTE */
+div.suporte{
+	border: 1px solid;
+	width: 500px;
+	margin: 15px auto;
+}
+div.head_suporte{
+	border: 0px solid;
+	width: 100%;
+	height: 100px;
+}
+div.img_suporte{
+	width: 100px;
+	height: 100px;
+	margin: 0px;
+	background-image: url(../img/suporte.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90px 90px;
+	float: left;
+}
+div.name_suporte{
+	border: 0px solid;
+	width: 400px;
+	height: 100px;
+	margin: 0px;
+	float: left;
+}
+div.name_suporte span{
+	font-size: 25px;
+	line-height: 100px;
+}
+div.body_suporte{
+	margin: 25px 0px 0px 0px;
+	width: 100%;
+	height: 120px;
+}
 
 
 

@@ -2,7 +2,7 @@
 	define( 'host', 'localhost' );
 	define( 'user', 'root' );
 	define( 'senha', 'root' );
-	define( 'dbname', 'u288612332_php' );
+	define( 'dbname', 'camiseta.com' );
 
 try{
     $PDO = new PDO( 'mysql:host=' . host . ';dbname=' . dbname, user, senha );
