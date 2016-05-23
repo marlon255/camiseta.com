@@ -1,8 +1,6 @@
 <?php
 	include '../include/header.php';
 	include '../include/menu.php';
-?>
-<?php
 	if(isset($_POST['btn_mat'])){
 		if(empty($_POST['material']) || empty($_POST['tipo']) || empty($_POST['grupo']) || empty($_POST['custo'])){
 			echo "<script>alert('Preencha os campos corretamente!');</script>";

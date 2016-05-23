@@ -270,6 +270,7 @@ input.edit{
 	border-radius: 2px;
 	color: #FFF;
 	transition: border .5s;
+	outline: none;
 }
 input.edit:hover{
 	border: 1px solid rgba(255,102,0,1);
@@ -285,6 +286,7 @@ div.material select{
 	border-radius: 2px;
 	color: #FFF;
 	transition: border .5s;
+	outline: none;
 }
 div.material select:hover{
 	border: 1px solid rgba(255,102,0,1);
