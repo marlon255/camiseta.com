@@ -74,6 +74,20 @@
 				$(this).attr({'disabled':'disabled'});
 			}});
 		});
+		$('#salvar<?=$rows_func['id'];?>').click(function(){
+			$('#cpf_new<?=$rows_func['id'];?>').each(function() {
+			if($(this).attr('disabled')){
+				$(this).removeAttr('disabled');
+			}else{
+				$(this).attr({'disabled':'disabled'});
+			}});
+			$('#rg_new<?=$rows_func['id'];?>').each(function() {
+			if($(this).attr('disabled')){
+				$(this).removeAttr('disabled');
+			}else{
+				$(this).attr({'disabled':'disabled'});
+			}});
+		});
 	});
 </script>
 <?php
