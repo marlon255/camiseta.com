@@ -69,7 +69,7 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 	</div>
 <?php
 	do{
-		include 'func_mat.php';
+		include 'func_material.php';
 ?>
 	<div class="material">
 	<form method="post">

@@ -459,6 +459,21 @@ form.contexto div{
 form.contexto span{
 	float: left;
 }
+form.contexto select{
+	margin-right: 7px;
+	width: 144px;
+	height: 21px;
+	float: left;
+	background-color: rgba(69,69,69,1);
+	border: 1px solid #FFF;
+	border-radius: 2px;
+	color: #FFF;
+	transition: border .5s;
+}
+form.contexto select:hover{
+	border: 1px solid rgba(255,102,0,1);
+	transition: border .5s;
+}
 input.bt_modal{
 	-webkit-appearance: none;
     background-color: rgba(0,0,0,0);

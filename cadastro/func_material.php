@@ -1,5 +1,6 @@
 <script type="text/javascript">
 $(document).ready(function(){
+	//BOTAO EDITAR DOS MATERIAIS
 	$('#editar<?=$rows_material['id'];?>').click(function(){
 		$('#material_new<?=$rows_material['id'];?>').each(function() {
 		if($(this).attr('disabled')){
@@ -29,7 +30,6 @@ $(document).ready(function(){
 			$(this).attr({'disabled':'disabled'});
 		}});
 	});
-
 });
 </script>
 <?php

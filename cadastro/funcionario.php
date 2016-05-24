@@ -107,7 +107,7 @@
 	</div>
 	<div class="lcadastro">
 		<label>Sálario</label>
-		<input name="sal_func" type="text" class="money" value="" required>
+		<input name="sal_func" type="text" class="money" value="R$0,00" required>
 	</div>
 	<div>
 		<input name="btn_func" type="submit" class="button" value="Cadastrar">
@@ -138,21 +138,26 @@
 	</div>
 <?php
 	do{
+		include 'func_funcionario.php';
 ?>
 	<form class="contexto" method="post">
-	<input type="text" class="edit_model" value="<?=$rows_func['nome'];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func['funcao'];?>" disabled>
-	<select disabled>
-		<option value="<?=$rows_func['nivel'];?>"><?php 
-			switch ($rows_func) {
-				case $rows_func == '1':
+	<input type="hidden" name="funcionario_id" value="<?=$rows_func['id'];?>">
+	<input id="nome_new<?=$rows_func['id'];?>" name="nome_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['nome'];?>" disabled>
+	<input id="funcao_new<?=$rows_func['id'];?>" name="funcao_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['funcao'];?>" disabled>
+	<select id="nivel_new<?=$rows_func['id'];?>" name="nivel_new<?=$rows_func['id'];?>" disabled>
+		<option value="<?=$rows_func['nivel'];?>"><?php
+			switch ($rows_func['nivel']) {
+				case "1":
 					echo "Básico";
 					break;
-				case $rows_func == '2':
+				case "2":
 					echo "Intermediário";
 					break;
-				case $rows_func == '3':
+				case "3":
 					echo "Administrador";
+					break;
+				default:
+					echo "Algum Erro!";
 					break;
 			}
 		?></option>
@@ -160,23 +165,22 @@
 		<option value="2">Intermediário</option>
 		<option value="3">Administrador</option>
 	</select>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
-	<input type="text" class="edit_model" value="<?=$rows_func[''];?>" disabled>
+	<input id="tel_new<?=$rows_func['id'];?>" name="tel_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['telefone'];?>" disabled>
+	<input id="endereco_new<?=$rows_func['id'];?>" name="endereco_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['endereco'];?>" disabled>
+	<input id="bairro_new<?=$rows_func['id'];?>" name="bairro_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['bairro'];?>" disabled>
+	<input id="nasc_new<?=$rows_func['id'];?>" name="nasc_new<?=$rows_func['id'];?>" type="date" class="edit_model" value="<?=$rows_func['nascimento'];?>" disabled>
+	<input id="cpf_new<?=$rows_func['id'];?>" name="cpf_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['cpf'];?>" disabled>
+	<input id="rg_new<?=$rows_func['id'];?>" name="rg_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=$rows_func['rg'];?>" disabled>
+	<input id="admissao_new<?=$rows_func['id'];?>" name="admissao_new<?=$rows_func['id'];?>" type="date" class="edit_model" value="<?=$rows_func['admissao'];?>" disabled>
+	<input id="demissao_new<?=$rows_func['id'];?>" name="demissao_new<?=$rows_func['id'];?>" type="date" class="edit_model" value="<?=$rows_func['demissao'];?>" disabled>
+	<input id="salario_new<?=$rows_func['id'];?>" name="salario_new<?=$rows_func['id'];?>" type="text" class="edit_model" value="<?=str_replace(".",",","R$".$rows_func['salario']);?>" disabled>
 	<div>
-	<span>Sim</span><input type="radio" name="ativo" id="sim" class="bt_modal" value="sim" disabled>
-	<span>Não</span><input type="radio" name="ativo" id="nao" class="bt_modal" value="nao" disabled>
+	<span>Sim</span><input type="radio" name="ativo<?=$rows_func['id'];?>" id="sim<?=$rows_func['id'];?>" class="bt_modal" value="sim" <?php echo ($rows_func['status'] == 'sim') ? 'checked' : ''; ?> disabled>
+	<span>Não</span><input type="radio" name="ativo<?=$rows_func['id'];?>" id="nao<?=$rows_func['id'];?>" class="bt_modal" value="nao" <?php echo ($rows_func['status'] == 'nao') ? 'checked' : ''; ?> disabled>
 	</div>
 	<div>
-	<input type="submit" class="bt_edit" value="">
-	<input type="submit" class="bt_edit" value="">
-	<input type="submit" class="bt_edit" value="">
+	<input id="editar<?=$rows_func['id'];?>" name="editar<?=$rows_func['id'];?>" type="button" class="editar" title="Editar" value="">
+	<input id="salvar<?=$rows_func['id'];?>" name="salvar<?=$rows_func['id'];?>" type="submit" class="salvar" title="Salvar" value="">
 	</div>
 	</form>
 <?php
