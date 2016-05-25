@@ -14,12 +14,11 @@
   var sub = document.getElementById('tot').value = "R$"+tot.toFixed(2);
   var total = sub.replace(".",",");
   document.getElementById('tot').value = total;
-  document.getElementById('total').value = tot;
+  }
+
   var estoque = document.getElementById('estoque');
   var entrada_estoque = document.getElementById('entrada_estoque');
   var soma_estoque = estoque + entrada_estoque;
-  }
-
   function enter_estoque(){
   var estoque = document.getElementById('estoque').value;
   var entrada_estoque = document.getElementById('entrada_estoque').value;

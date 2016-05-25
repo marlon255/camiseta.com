@@ -1,30 +1,31 @@
 <?php
 	include '../include/header.php';
 	include '../include/menu.php';
-	if(isset($_POST['btn_mat'])){
-		if(empty($_POST['material']) || empty($_POST['tipo']) || empty($_POST['grupo']) || empty($_POST['custo'])){
-			echo "<script>alert('Preencha os campos corretamente!');</script>";
-		}else{
+	if(isset($_POST['btn_mat'])):
+		if(empty($_POST['material']) || empty($_POST['tipo']) || empty($_POST['grupo']) || empty($_POST['custo'])):
+			echo "<script>alert('Preencha os campos corretamente!')</script>";
+		else:
 		$mat = $_POST['material'];
 		$tipo = $_POST['tipo'];
 		$grupo = $_POST['grupo'];
 		$custo = $_POST['custo'];
-	$sql_material = "INSERT INTO material(material, tipo, grupo, custo) VALUES (:mat, :tipo, :grupo, :custo)";
-	$query_material = $PDO->prepare($sql_material);
-	$query_material->bindValue(":mat", $mat);
-	$query_material->bindValue(":tipo", $tipo);
-	$query_material->bindValue(":grupo", $grupo);
-	$query_material->bindValue(":custo", $custo);
-	$validar_material = $PDO->prepare("SELECT * FROM material WHERE material = ?");
-	$validar_material->execute(array($mat));
-	if($validar_material->rowCount() == 0):
-	$query_material->execute();
-	echo "<script>alert('Cadastro realizado com Sucesso!')</script>";
-	else:
-		echo "<script>alert('Já possui este material cadastrado!')</script>";
+
+		$sql_material = "INSERT INTO material(material, tipo, grupo, custo) VALUES (:mat, :tipo, :grupo, :custo)";
+		$query_material = $PDO->prepare($sql_material);
+		$query_material->bindValue(":mat", $mat);
+		$query_material->bindValue(":tipo", $tipo);
+		$query_material->bindValue(":grupo", $grupo);
+		$query_material->bindValue(":custo", $custo);
+		$validar_material = $PDO->prepare("SELECT * FROM material WHERE material = ?");
+		$validar_material->execute(array($mat));
+			if($validar_material->rowCount() == 0):
+			$query_material->execute();
+			echo "<script>alert('Cadastro realizado com Sucesso!')</script>";
+			else:
+				echo "<script>alert('Já possui este material cadastrado!')</script>";
+			endif;
 	endif;
-	}
-}
+	endif;
 $exibir_material = $PDO->prepare("SELECT * FROM material");
 $exibir_material->execute();
 $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
@@ -56,9 +57,12 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 		</select>
 	</div>
 	<div>
-		<input name="btn_mat" type="submit" class="button" value="Cadastrar">
+		<input name="btn_mat" id="btn_mat" type="submit" class="button" value="Cadastrar">
 	</div>
 </form>
+<div id="aviso" style="border: 1px solid; width: 200px; margin: 5px auto 0px auto; display: none;">
+	Preencha os campos corretamente!
+</div>
 <div class="exibir">
 	<div class="header">
 		<div>Material</div>
@@ -68,7 +72,8 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 		<div>Ações</div>
 	</div>
 <?php
-	do{
+	if($rows_material > 0):
+		do{
 		include 'func_material.php';
 ?>
 	<div class="material">
@@ -94,7 +99,10 @@ $rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC);
 		</div>
 	</div>
 <?php
-	}while ($rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC));
+	}while($rows_material = $exibir_material->fetch(PDO::FETCH_ASSOC));
+else:
+	echo "Nenhum material cadastrado!";
+endif;
 ?>
 </div>
 <?php

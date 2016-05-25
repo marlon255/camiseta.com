@@ -1,8 +1,7 @@
 <?php
 	include '../include/header.php';
 	include '../include/menu.php';
-?>
-<?php
+
 	//Inserindo o Funcionario no banco de dados
 
 	if(isset($_POST['btn_func'])){
@@ -26,24 +25,25 @@
 				$demissao = "00/00/0000";
 			}
 
-			$cad_func = $PDO->prepare("INSERT INTO funcionario (nome, funcao, nivel, telefone, endereco, bairro, nascimento, cpf, rg, admissao, demissao, salario, status)
-				VALUES (:func, :funcao, :nivel, :tel, :endereco, :bairro, :nascimento, :cpf, :rg, :admissao, :demissao, :salario, 'sim')");
-			$cad_func->bindValue(':func', $func);
-			$cad_func->bindValue(':funcao', $funcao);
-			$cad_func->bindValue(':nivel', $nivel);
-			$cad_func->bindValue(':tel', $tel);
-			$cad_func->bindValue(':endereco', $endereco);
-			$cad_func->bindValue(':bairro', $bairro);
-			$cad_func->bindValue(':nascimento', $nascimento);
-			$cad_func->bindValue(':cpf', $cpf);
-			$cad_func->bindValue(':rg', $rg);
-			$cad_func->bindValue(':admissao', $admissao);
-			$cad_func->bindValue(':demissao', $demissao);
-			$cad_func->bindValue(':salario', $salario);
+			$sql_funcionario = "INSERT INTO funcionario (nome, funcao, nivel, telefone, endereco, bairro, nascimento, cpf, rg, admissao, demissao, salario, status)
+				VALUES (:func, :funcao, :nivel, :tel, :endereco, :bairro, :nascimento, :cpf, :rg, :admissao, :demissao, :salario, 'sim')";
+			$query_funcionario = $PDO->prepare($sql_funcionario);
+			$query_funcionario->bindValue(':func', $func);
+			$query_funcionario->bindValue(':funcao', $funcao);
+			$query_funcionario->bindValue(':nivel', $nivel);
+			$query_funcionario->bindValue(':tel', $tel);
+			$query_funcionario->bindValue(':endereco', $endereco);
+			$query_funcionario->bindValue(':bairro', $bairro);
+			$query_funcionario->bindValue(':nascimento', $nascimento);
+			$query_funcionario->bindValue(':cpf', $cpf);
+			$query_funcionario->bindValue(':rg', $rg);
+			$query_funcionario->bindValue(':admissao', $admissao);
+			$query_funcionario->bindValue(':demissao', $demissao);
+			$query_funcionario->bindValue(':salario', $salario);
 			$valida_func = $PDO->prepare("SELECT * FROM funcionario WHERE cpf = ?");
 			$valida_func->execute(array($cpf));
 			if($valida_func->rowCount() == 0){
-				$cad_func->execute();
+				$query_funcionario->execute();
 				echo "<script>alert('Cadastro realizado com Sucesso!')</script>";
 			}else{
 				echo "<script>alert('Este funcionário já esta cadastrado!');</script>";
@@ -137,6 +137,7 @@
 		<div>Ações</div>
 	</div>
 <?php
+	if($rows_func > 0){
 	do{
 		include 'func_funcionario.php';
 ?>
@@ -185,6 +186,9 @@
 	</form>
 <?php
 	}while($rows_func = $func_exibir->fetch(PDO::FETCH_ASSOC));
+}else{
+	echo "Nenhum funcionário cadastrado!";
+}
 ?>
 	</div>
 </div>

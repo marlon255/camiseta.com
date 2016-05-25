@@ -492,7 +492,7 @@ input.bt_modal:checked{
 	transition: background 1s;
 }
 /* ESTILO DESPESA */
-div.despesa{
+form.despesa{
 	width: 695px;
 	height: 370px;
 	margin: 2px auto 0px auto;
@@ -500,11 +500,11 @@ div.despesa{
 	float: left;
 	overflow: auto;
 }
-div.despesa div{
+form.despesa div{
     width: 96px;
     float: left;
 }
-div.despesa select{
+form.despesa select{
 	margin-right: 7px;
 	width: 132px;
 	height: 21px;
@@ -515,7 +515,7 @@ div.despesa select{
 	color: #FFF;
 	transition: border .5s;
 }
-div.despesa select:hover{
+form.despesa select:hover{
 	border: 1px solid rgba(255,102,0,1);
 	transition: border .5s;
 }

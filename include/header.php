@@ -2,18 +2,6 @@
 <?php
 // CHAMANDO URL DE CSS APARTIR DA BASE
 	define('URL', 'http://'.$_SERVER['SERVER_NAME'].'/camiseta.com/');
-// FUNÇÃO PARA INCLUIR O ARQUIVO LOCAL
-function incluir($arquivo) {
- 
-// QUEBRAMOS O ARQUIVO PELA \\
-$diretorio = explode("\\", dirname(__FILE__));
- 
-// PEGAMOS AS PARTES QUE INTERESSA PARA MONTAR A BASE
-$base = $diretorio[0]."\\".$diretorio[1]."\\".$diretorio[2]."\\".$diretorio[3]."\\";
- 
-// FAZEMOS O INCLUDE DO ARQUIVO
-include($base.$arquivo);
-}
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" id="tela">
 <head>
@@ -24,21 +12,14 @@ include($base.$arquivo);
 <script type="text/javascript" src="<?=URL;?>/js/jquery.min.js"></script>
 <script type="text/javascript" src="<?=URL;?>/js/jquery.maskMoney.js"></script>
 <script type="text/javascript" src="<?=URL;?>/js/funcoes.js"></script>
-<script type="text/javascript">
-
-</script>
 </head>
 <?php
-	define( 'host', 'localhost' );
-	define( 'user', 'root' );
-	define( 'senha', 'root' );
-	define( 'dbname', 'camiseta.com' );
+// QUEBRAMOS O ARQUIVO PELA \\
+$diretorio = explode("\\", dirname(__FILE__));
+// PEGAMOS AS PARTES QUE INTERESSA PARA MONTAR A BASE
+$base = $diretorio[0]."\\".$diretorio[1]."\\".$diretorio[2]."\\".$diretorio[3]."\\";
 
-try{
-    $PDO = new PDO( 'mysql:host=' . host . ';dbname=' . dbname, user, senha );
-}catch ( PDOException $e ){
-    echo 'Erro ao conectar com o MySQL: ' . $e->getMessage();
-}
+include ($base."seg\connect.class.php");
 ?>
 <body>
 	<div class="topo">
