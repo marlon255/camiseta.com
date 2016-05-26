@@ -16,13 +16,10 @@
   document.getElementById('tot').value = total;
   }
 
-  var estoque = document.getElementById('estoque');
-  var entrada_estoque = document.getElementById('entrada_estoque');
-  var soma_estoque = estoque + entrada_estoque;
   function enter_estoque(){
   var estoque = document.getElementById('estoque').value;
   var entrada_estoque = document.getElementById('entrada_estoque').value;
-  if(estoque > "0"){
+  if(estoque => "0"){
   var soma_estoque = parseInt(estoque) + parseInt(entrada_estoque);
   document.getElementById('novo_estoque').value = soma_estoque;
   }
@@ -40,29 +37,29 @@
   var screenHeight = screen.height;
   document.getElementById('tela').style.height = screenHeight-198+'px';
 //Mostrando a data e hora atual para compra e venda de material
-	var now = new Date();
-	var day = now.getDate();
-	var month = now.getMonth() + 1;
-	var year = now.getFullYear();
-	if (month < 10) month = "0" + month;
-	if (day < 10) day = "0" + day;
-	var today = year + "-" + month + "-" + day;
-	
-    function checkTime(i) {
-        return (i < 10) ? "0" + i : i;
-    }
+var now = new Date();
+var day = now.getDate();
+var month = now.getMonth() + 1;
+var year = now.getFullYear();
+if (month < 10) month = "0" + month;
+if (day < 10) day = "0" + day;
+var today = year + "-" + month + "-" + day;
 
-    function startTime() {
-		var hoje = new Date();
-            h = checkTime(hoje.getHours()),
-            m = checkTime(hoje.getMinutes()),
-            s = checkTime(hoje.getSeconds());
-			hour = h + ":" + m + ":" + s;
-        t = setTimeout(function () {
-            startTime()
-        }, 500);
-    }
-    startTime();
+  function checkTime(i) {
+      return (i < 10) ? "0" + i : i;
+  }
+
+  function startTime() {
+  var hoje = new Date();
+          h = checkTime(hoje.getHours()),
+          m = checkTime(hoje.getMinutes()),
+          s = checkTime(hoje.getSeconds());
+    hour = h + ":" + m + ":" + s;
+      t = setTimeout(function () {
+          startTime()
+      }, 500);
+  }
+  startTime();
 //Configuração do modal
   $(document).ready(function(){
   $(".exit_modal").click(function(){
@@ -87,6 +84,7 @@
 	  $("#todos").hide(500);
 	  $("#saida").show(500);
   });
+  $("#bt_all").focus();
   $("#bt_all").click(function(){
 	  $("#entrada").hide(500);
 	  $("#saida").hide(500);

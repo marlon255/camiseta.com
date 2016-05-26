@@ -522,7 +522,7 @@ form.despesa select:hover{
 /* ESTILO ENTRADA DE CAIXA */
 div.titulo{
 	border: 0px solid;
-	width: 1510px;
+	width: 1360px;
 	float: left;
 }
 div.titulo div{
@@ -530,32 +530,6 @@ div.titulo div{
 	border-bottom: 1px dotted #CCC;
 	width: 150px;
 	float: left;
-}
-div.entrada{
-	width: 1510px;
-	margin: 2px auto 0px auto;
-	border: 0px solid #FFF;
-	float: left;
-	overflow: auto;
-}
-div.entrada div{
-    width: 96px;
-    float: left;
-}
-div.entrada select{
-	margin-right: 7px;
-	width: 145px;
-	height: 21px;
-	float: left;
-	background-color: rgba(69,69,69,1);
-	border: 1px solid #FFF;
-	border-radius: 2px;
-	color: #FFF;
-	transition: border .5s;
-}
-div.entrada select:hover{
-	border: 1px solid rgba(255,102,0,1);
-	transition: border .5s;
 }
 /* ESTILO PARA INPUT DINHEIRO */
 input.money{
@@ -583,20 +557,14 @@ div.hideshow{
 	position: absolute;
 	left: 5%;
 	width: 90%;
-	height: 60%;
+	height: 57%;
 	margin: 15px auto 0px auto;
 	border: 1px solid rgba(255,102,0,1);
 	overflow: auto;
 }
-div.relat{
-	border: 0px solid;
-	border-radius: 5px;
-	float: left;
-	display: none;
-}
 div.entrada_exibir{
 	border: 0px solid;
-	width: 1520px;
+	width: 1360px;
 	float: left;
 }
 div.entrada_exibir div{
@@ -606,15 +574,19 @@ div.entrada_exibir div{
 	float: left;
 }
 div.edit_enter{
-	width: 1520px;
+	width: 1360px;
 	margin: 2px auto 0px auto;
 	border: 0px solid #FFF;
 	float: left;
 	overflow: auto;
+	display: none;
 }
 div.edit_enter div{
-    width: 96px;
-    float: left;
+    border-right: 1px dotted #CCC;
+	border-bottom: 1px dotted #CCC;
+	width: 150px;
+	height: 22px;
+	float: left;
 }
 div.edit_enter select{
 	margin-right: 7px;

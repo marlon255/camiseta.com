@@ -3,6 +3,7 @@
 	include '../include/menu.php';
 ?>
 <?php
+date_default_timezone_set("America/Sao_Paulo");
 	//BUSCANDO OS ITENS A SER VENDIDO NO BANCO DE DADOS
 	$select_item = $PDO->prepare("SELECT * FROM material WHERE grupo = 'Entrada'");
 	$select_item->execute();
@@ -10,8 +11,8 @@
 	//INSERINDO DADOS NO BANCO
 	if(isset($_POST['btn_enter_caixa'])):
 		if(empty($_POST['enter_recibo']) || empty($_POST['enter_date_caixa']) || empty($_POST['enter_hour']) || empty($_POST['enter_cliente']) || empty($_POST['enter_item']) || 
-			empty($_POST['enter_quant']) || empty($_POST['enter_uni']) || empty($_POST['enter_desc']) || empty($_POST['enter_total']) || $_POST['enter_uni'] == "R$0,00" ||
-			$_POST['enter_desc'] == "R$0,00" || $_POST['enter_total'] == "R$"):
+			empty($_POST['enter_quant']) || empty($_POST['enter_uni']) || empty($_POST['enter_desc']) || empty($_POST['enter_total']) || $_POST['enter_uni'] == "R$0,00" || 
+			$_POST['enter_total'] == "R$"):
 			echo "<script>alert('Preencha os campos corretamente!');</script>";
 		else:
 			$entrada_recibo = $_POST['enter_recibo'];
@@ -37,9 +38,13 @@
 			$query_enter_caixa->bindValue(":desconto", $entrada_desconto);
 			$query_enter_caixa->bindValue(":total", $entrada_total);
 			$query_enter_caixa->execute();
-			echo "<script>alert('Cadastro realizado com Sucesso!');</script>";
+			echo "<script>alert('Produto vendido!');</script>";
 		endif;
 	endif;
+	$sql_exibir_entrada = "SELECT * FROM entrada_caixa WHERE data = '".date('Y-m-d')."'";
+	$query_exibir_entrada = $PDO->prepare($sql_exibir_entrada);
+	$query_exibir_entrada->execute();
+	$rows_exibir_entrada = $query_exibir_entrada->fetch(PDO::FETCH_ASSOC);
 ?>
 <h1>Entrada em Caixa</h1>
 <form class="cadastro" method="post">
@@ -60,14 +65,16 @@
 		<label>Item a ser Vendido</label>
 		<select name="enter_item" required>
 			<option selected disabled>Selecione-->></option>
-			<?php do{ ?>
+			<?php 
+			if($rows_itens > 0):
+			do{ ?>
 			<option><?=$rows_itens['material'];?></option>
-			<?php }while ($rows_itens = $select_item->fetch(PDO::FETCH_ASSOC)); ?>
+			<?php }while ($rows_itens = $select_item->fetch(PDO::FETCH_ASSOC)); endif;	?>
 		</select>
 	</div>
 	<div class="lcadastro">
 		<label>Quantidade</label>
-		<input name="enter_quant" type="number" class="text" id="quant" required>
+		<input name="enter_quant" type="number" class="text" id="quant" onblur="calcular()" required>
 	</div>
 	<div class="lcadastro">
 		<label>Valor Unitario</label>
@@ -96,27 +103,28 @@
 		<div>Valor Unitario</div>
 		<div>Desconto</div>
 		<div>Total</div>
-		<div>Ação</div>
 	</div>
-	<div class="entrada">
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<select disabled>
-			<option>Selecione-->></option>
-			<option>Selecione-->>></option>
-		</select>
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<input type="text" class="edit_model" disabled>
-		<div>
-		<input type="submit" id="editar" class="bt_edit" value="" title="Editar" required>
-		<input type="submit" id="salvar" class="bt_edit" value="" title="Salvar" required>
-		<input type="submit" id="excluir" class="bt_edit" value="" title="Deletar" required>
-		</div>
+<?php
+	if($rows_exibir_entrada > 0):
+		do{
+?>
+	<div class="titulo">
+			<div><?=$rows_exibir_entrada['recibo'];?></div>
+			<div><?=date('d-m-Y',strtotime($rows_exibir_entrada['data']));?></div>
+			<div><?=$rows_exibir_entrada['hora'];?></div>
+			<div><?=$rows_exibir_entrada['cliente'];?></div>
+			<div><?=$rows_exibir_entrada['item'];?></div>
+			<div><?=$rows_exibir_entrada['quantidade'];?></div>
+			<div><?="R$".number_format($rows_exibir_entrada['unitario'],2,',','.');?></div>
+			<div><?="R$".number_format($rows_exibir_entrada['desconto'],2,',','.');?></div>
+			<div><?="R$".number_format($rows_exibir_entrada['total'],2,',','.');?></div>
 	</div>
+<?php
+	}while ($rows_exibir_entrada = $query_exibir_entrada->fetch(PDO::FETCH_ASSOC));
+	else:
+		echo "Nenhuma venda realizada nesta data.";
+	endif;
+?>
 </div>
 <?php
 	include '../include/rodape.php';
