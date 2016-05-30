@@ -5,7 +5,7 @@
 		if(empty($entrada_estoque) || $entrada_estoque == null || $entrada_estoque == "Selecione-->>"){
 			$sql = "SELECT * FROM material";
 		}else{
-			$sql = "SELECT * FROM material WHERE material = '".$entrada_estoque."' && grupo = 'Saida'";
+			$sql = "SELECT * FROM material WHERE material = '".$entrada_estoque."'";
 			$query = $PDO->prepare($sql);
 			$query->execute();
 			$rows = $query->fetch(PDO::FETCH_ASSOC);

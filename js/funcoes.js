@@ -19,7 +19,9 @@
   function enter_estoque(){
   var estoque = document.getElementById('estoque').value;
   var entrada_estoque = document.getElementById('entrada_estoque').value;
-  if(estoque => "0"){
+  if(estoque == null || estoque == "" || entrada_estoque == null || entrada_estoque == ""){
+  "";
+}else{
   var soma_estoque = parseInt(estoque) + parseInt(entrada_estoque);
   document.getElementById('novo_estoque').value = soma_estoque;
   }
@@ -28,7 +30,9 @@
   function exit_estoque(){
   var estoque = document.getElementById('estoque').value;
   var saida_estoque = document.getElementById('saida_estoque').value;
-  if(estoque > 0){
+  if(estoque == null || estoque == "" || saida_estoque == null || saida_estoque == ""){
+  "";
+}else{
   var subtracao_estoque = parseInt(estoque) - parseInt(saida_estoque);
   document.getElementById('new_estoque').value = subtracao_estoque;
   }
@@ -121,4 +125,15 @@ if (xmlreq.readyState == 4) {
 if (xmlreq.status == 200){result.value = xmlreq.responseText;}
 else{result.value = "Erro: " + xmlreq.statusText;}}};
 xmlreq.send(null);
-}*
+}
+function DadosGet() {
+var nome   = document.getElementById("mat_exit_estoque").value;
+var result = document.getElementById("estoque");
+var xmlreq = CriaRequest();
+xmlreq.open("GET", "saida_estoque.php?saida_estoque=" + nome, true);
+xmlreq.onreadystatechange = function(){
+if (xmlreq.readyState == 4) {
+if (xmlreq.status == 200){result.value = xmlreq.responseText;}
+else{result.value = "Erro: " + xmlreq.statusText;}}};
+xmlreq.send(null);
+}

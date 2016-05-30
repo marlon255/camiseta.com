@@ -618,9 +618,9 @@ table.estoque td{
 }
 /* ESTILO SUPORTE */
 div.suporte{
-	border: 1px solid;
+	border: 0px solid;
 	width: 500px;
-	margin: 15px auto;
+	margin: 25px auto;
 }
 div.head_suporte{
 	border: 0px solid;
